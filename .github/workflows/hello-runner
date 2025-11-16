@@ -1,0 +1,24 @@
+name: hello world 2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show runner info
+        run: |
+          echo "=== CPU Info ==="
+          lscpu
+          echo
+          echo "=== Memory Info ==="
+          free -h
+          echo
+          echo "=== Current Directory ==="
+          pwd
+          echo
+          echo "=== Directory Contents ==="
+          ls -al
