@@ -1,4 +1,4 @@
-name: Hello runner
+name: Hello echo
 
 on:
   push:
@@ -6,22 +6,8 @@ on:
       - main
 
 jobs:
-  runner-job-definition:
+  echo-job-definition:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Show runner info
-        run: |
-          echo "=== CPU Info ==="
-          lscpu
-          echo
-          echo "=== Memory Info ==="
-          free -h
-          echo
-          echo "=== Current Directory ==="
-          pwd
-          echo
-          echo "=== Directory Contents ==="
-          ls -al
+      - name: Echo text to terminal
+        run: echo "hello world"
